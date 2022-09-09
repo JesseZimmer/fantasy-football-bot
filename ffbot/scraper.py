@@ -1,4 +1,5 @@
 from datetime import datetime
+import time
 
 from bs4 import BeautifulSoup as bs
 from loguru import logger
@@ -82,7 +83,8 @@ def scrape(league):
     def get_projections(row):
         # New session every 100 players
         global s
-        if row.name % 100 == 0:
+        if row.name % 25 == 0:
+            time.sleep(60)
             s = create_session()
 
         pid = row["ID"]
