@@ -83,8 +83,7 @@ def scrape(league):
     def get_projections(row):
         # New session every 100 players
         global s
-        if row.name % 25 == 0:
-            time.sleep(60)
+        if row.name % 50 == 0:
             s = create_session()
 
         pid = row["ID"]
